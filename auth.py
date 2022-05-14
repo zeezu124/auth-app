@@ -6,21 +6,11 @@
 # - username/email, password 
 
 import logging
-from pickle import TRUE
 
 
 def registration():
     logging.info("this is registration")
-    
-    haveAccount = input("Do you have an account? (y/n)")
-    
-    if(haveAccount == 'y'):
-        login()
-    elif(haveAccount == 'n'):
-        pass
-    else :
-        print("Invalid input")
-        registration()
+    pass
 
 def login():
     logging.info("this is login")
@@ -46,7 +36,19 @@ def generateAccountNumber():
 
 
 def init():
-    print("this is init")
+    logging.info("this is init")
 
+    print("Welcome to Le Bank")
+    
+    haveAccount = input("Do you have an account? (y/n)")
+    
+    if(haveAccount == 'y'):
+        login()
+    elif(haveAccount == 'n'):
+        registration()
+    else :
+        print("Invalid input")
+        init()
+    
 
 init()
